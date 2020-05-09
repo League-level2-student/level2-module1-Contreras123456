@@ -7,11 +7,11 @@ public class IntroToArrayLists {
 		//1. Create an array list of Strings
 		//   Don't forget to import the ArrayList class
 	ArrayList<String> names = new ArrayList<String>();
-		//2. Add five Strings to your list
+		//2. Add five Strings to your list 
 names.add("Coffin Dance");
 names.add("Stalingrad");
 names.add("Leningrad");
-names.add("Elmo");
+names.add("elmo");
 names.add("Fortnite");
 		//3. Print all the Strings using a standard for-loop
 		for(int i = 0; i < names.size(); i++) {
@@ -30,8 +30,17 @@ names.add("Fortnite");
 				System.out.println(names.get(i));
 			}
 		}
+		System.out.println("\n");
 		//6. Print all the Strings in reverse order.
-		
+		for (int i = names.size()-1; i > 0; i--) {
+			System.out.println(names.get(i));
+		}
+		System.out.println("\n");
 		//7. Print only the Strings that have the letter 'e' in them.
+		for (int i = 0; i < names.size(); i++) {
+			if (names.get(i).contains("e")) {
+				System.out.println(names.get(i));
+			}
+		}
 	}
 }
