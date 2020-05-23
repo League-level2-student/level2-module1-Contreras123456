@@ -23,16 +23,16 @@ public class GuestBook implements ActionListener {
 	
 	}
  void setup() {
-		frame.setVisible(true);
+	 button.addActionListener(this);
+		button2.addActionListener(this);
 		frame.add(panel);
 		panel.add(label);
 		panel.add(button);
 		panel.add(button2);
 		button.setText("Add Name"); 
 		button2.setText("View Names");
-		button.addActionListener(this);
-		button2.addActionListener(this);
 		frame.pack();
+		frame.setVisible(true);
 	}
 	// Create a GUI with two buttons. One button reads "Add Name" and the other button reads "View Names". 
 	// When the add name button is clicked, display an input dialog that asks the user to enter a name. Add
@@ -46,17 +46,16 @@ public class GuestBook implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if (e.getSource()==button) {
-			JOptionPane.showInputDialog("Enter a name");
+			names.add(JOptionPane.showInputDialog("Enter a name")); 
 			
 		}
 		else if (e.getSource()==button2) {
 			String hello = "";
- for (int i = 0; i < names.size(); i++) {
-	hello += names.get(i);
-	System.out.println(names.get(i));
+ for (int i = 1; i < names.size()+1; i++) {
+	hello += "Guest #"+i+" "+names.get(i-1)+"\n";
  }
  System.out.println(hello);
-	JOptionPane.showMessageDialog(null, "Here are the names added to the list" +hello);
+	JOptionPane.showMessageDialog(null, "Here are the names added to the list: " +hello);
  
 	}
 }
